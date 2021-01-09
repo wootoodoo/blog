@@ -2,10 +2,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const ejs = require("ejs");
+const IAM = require(__dirname + "/secrets/IAM.js");
 var _ = require("lodash");
 let port = process.env.PORT || 3000;
 
-mongoose.connect("mongodb+srv://admin-jonathan:codenamejonni3@cluster0.kwho8.mongodb.net/blogDB", {useNewUrlParser:true, useUnifiedTopology: true});
+
+mongoose.connect("mongodb+srv://" + IAM.details.username + ":" + IAM.details.password + "@cluster0.kwho8.mongodb.net/blogDB", {useNewUrlParser:true, useUnifiedTopology: true});
 
 const postSchema = {
   title: {
@@ -33,8 +35,6 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
-
-// let posts = [];
 
 app.post("/compose", (req, res) => {
   const post = new Post({
