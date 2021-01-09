@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const ejs = require("ejs");
 var _ = require("lodash");
+let port = process.env.PORT || 3000;
 
 mongoose.connect("mongodb+srv://admin-jonathan:codenamejonni3@cluster0.kwho8.mongodb.net/blogDB", {useNewUrlParser:true, useUnifiedTopology: true});
 
@@ -109,6 +110,6 @@ app.get("/posts/:postID", (req, res) => {
   // };
 });
 
-app.listen(3000, function() {
+app.listen(port, function() {
   console.log("Server started on port 3000");
 });
