@@ -10,22 +10,22 @@ There is handling of edge cases for invalid input, and Mocha is used to conduct 
 
 ## Project structure
 
-├── shopback-calculator.js ────>  Entry point to the app
-├── **src**
-│   ├── index.js      ────>            Provides routing to different actions
-│   ├── **actions**
-│   │   ├── redeem.js  ────>           Business logic for redeem action
-│   │   ├── signup.js   ────>          Business logic for signup action
-│   │   └── spend.js   ────>           Business logic for spend action
-│   └── **data**
-│       ├── bonus.js   ────>           Mapping of website to bonus amount for signup.js
-│       └── website.js ────>           Mapping of website to full URL name for redeem.js
-│                            
-├── **test**
-│    └── test.js        ────>           Test file for unit testing using Mocha
-├── package.json
-├── package-lock.json
-└── README.md
+- shopback-calculator.js ────>  Entry point to the app
+- **src**
+  - index.js      ────>            Provides routing to different actions
+  - **actions**
+    - redeem.js  ────>           Business logic for redeem action
+    - signup.js   ────>          Business logic for signup action
+    - spend.js   ────>           Business logic for spend action
+  - **data**
+    -  bonus.js   ────>           Mapping of website to bonus amount for signup.js
+    -  website.js ────>           Mapping of website to full URL name for redeem.js
+- **test**
+  - test.js        ────>           Test file for unit testing using Mocha
+- package.json
+- package-lock.json
+- README.md
+
 
 ## How to add a new action
 
